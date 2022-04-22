@@ -49,7 +49,7 @@ public class GenerateTerrain : MonoBehaviour
     private void GenerateDungeon()
     {
         DungeonGenerator generator = new DungeonGenerator(height: 25, maxWidth: 6);
-        
+
         // This variable gets the new starting point for each floor
         int currentXOffset = 0;
         for (int y = 0; y < generator.Height; y++)
@@ -82,7 +82,7 @@ public class GenerateTerrain : MonoBehaviour
     private Room GetRandomRoom(List<Room> suitableRooms)
     {
         float probabilitySum = suitableRooms.Sum(room => room.metadata.Probability);
-        float randomNumber = UnityEngine.Random.Range(0f,probabilitySum);
+        float randomNumber = UnityEngine.Random.Range(0f, probabilitySum);
 
         float currentTotal = 0;
         foreach (var room in suitableRooms)
@@ -113,6 +113,12 @@ public class GenerateTerrain : MonoBehaviour
     public int ChunkSizeY = 1;
     public int ChunkLoadRange = 5;
     public Room[] Rooms;
+
+    public Room GetCurrentRoom()
+    {
+        var position = GetGridCoordinates(transform.position);
+        return map[new Vector2Int(position.x, position.y)].Room;
+    }
 
     public Vector2Int GetGridCoordinates(Vector3 location)
     {
@@ -173,7 +179,7 @@ public class GenerateTerrain : MonoBehaviour
             if (!obj.IsLoaded)
             {
                 obj.Load(new Vector3(chunk.x * ChunkSizeX, chunk.y * ChunkSizeY, 0));
-                obj.instance.transform.parent = MapParentObject.transform;
+                obj.Instance.transform.parent = MapParentObject.transform;
                 loadedChunksPositions.Add(chunk);
             }
         }
@@ -192,25 +198,25 @@ class RoomState
 {
     public RoomState(Room room)
     {
-        this.room = room;
+        this.Room = room;
     }
 
     public void Load(Vector3 position)
     {
         IsLoaded = true;
-        instance = GameObject.Instantiate(room.prefab);
-        instance.transform.position = position;
+        Instance = GameObject.Instantiate(Room.prefab);
+        Instance.transform.position = position;
     }
 
     public void Unload()
     {
         IsLoaded = false;
-        GameObject.Destroy(instance.gameObject);
+        GameObject.Destroy(Instance.gameObject);
 
     }
 
     // Private so nothing messes with it
-    private Room room;
-    public GameObject instance { get; private set; }
+    public Room Room { get; }
+    public GameObject Instance { get; private set; }
     public bool IsLoaded { get; private set; } = false;
 }
