@@ -69,16 +69,36 @@ public class GenerateTerrain : MonoBehaviour
                                     .GroupBy(room => GetRoomSuitabilityScore(currentRoomMetadata, room.metadata)) // Group up rooms with a similar suitability level
                                     .First() // Take the group of most suitable rooms
                                     .ToList(); //Convert back into a list
+                Room randomRoom = GetRandomRoom(suitableRooms);
 
-                // Randomly pick from the suitable rooms
-                var randomRoom = suitableRooms[random.Next(suitableRooms.Count())];
-                
                 //Add the new room to the map
                 map[worldPosition] = new RoomState(randomRoom);
             }
             //Update the offset for the next floor's placement
             currentXOffset += (currentLayer.ExitOffset ?? 0) - (currentLayer.EntranceOffset ?? 0);
         }
+    }
+
+    private Room GetRandomRoom(List<Room> suitableRooms)
+    {
+        float probabilitySum = suitableRooms.Sum(room => room.metadata.Probability);
+        float randomNumber = UnityEngine.Random.Range(0f,probabilitySum);
+
+        float currentTotal = 0;
+        foreach (var room in suitableRooms)
+        {
+            currentTotal += room.metadata.Probability;
+
+            if (randomNumber <= currentTotal)
+            {
+                return room;
+            }
+        }
+
+        throw new IndexOutOfRangeException("A room mistakenly wasn't chosen");
+
+        // Randomly pick from the suitable rooms
+        //return suitableRooms[UnityEngine.Random.Range(0,suitableRooms.Count())];
     }
 
     void Update()
@@ -88,7 +108,6 @@ public class GenerateTerrain : MonoBehaviour
 
     private Dictionary<Vector2Int, RoomState> map = new Dictionary<Vector2Int, RoomState>();
     private HashSet<Vector2Int> loadedChunksPositions = new HashSet<Vector2Int>();
-    private System.Random random = new System.Random();
     public GameObject MapParentObject;
     public int ChunkSizeX = 2;
     public int ChunkSizeY = 1;
