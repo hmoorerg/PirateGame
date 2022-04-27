@@ -22,12 +22,14 @@ public class PlayerController : MonoBehaviour
     public float attackDuration;
     private float attackTime;
     private Vector3 scale;
+    public Inventory inventory;
     
 
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        inventory = new Inventory(); 
         isJumping = false;
         facingLeft = true;
         
