@@ -93,5 +93,6 @@ public class RoomMetadata
     public bool IsBottomOpen = false;
     public bool IsLeftOpen = false;
     public bool IsRightOpen = false;
+    public float Probability = 1;
 
 }
