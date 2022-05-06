@@ -48,7 +48,7 @@ public class GenerateTerrain : MonoBehaviour
 
     private void GenerateDungeon()
     {
-        DungeonGenerator generator = new DungeonGenerator(height: 10, maxWidth: 6);
+        DungeonGenerator generator = new DungeonGenerator(height: 15, maxWidth: 15);
 
         // This variable gets the new starting point for each floor
         int currentXOffset = 0;
