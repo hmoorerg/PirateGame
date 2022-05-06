@@ -48,7 +48,7 @@ public class GenerateTerrain : MonoBehaviour
 
     private void GenerateDungeon()
     {
-        DungeonGenerator generator = new DungeonGenerator(height: 25, maxWidth: 6);
+        DungeonGenerator generator = new DungeonGenerator(height: 10, maxWidth: 6);
 
         // This variable gets the new starting point for each floor
         int currentXOffset = 0;
@@ -81,13 +81,14 @@ public class GenerateTerrain : MonoBehaviour
 
     private Room GetRandomRoom(List<Room> suitableRooms)
     {
-        float probabilitySum = suitableRooms.Sum(room => room.metadata.Probability);
+        // Add a value of 1 to make sure that this works even if the probability is 0
+        float probabilitySum = suitableRooms.Sum(room => room.metadata.Probability + 1);
         float randomNumber = UnityEngine.Random.Range(0f, probabilitySum);
 
         float currentTotal = 0;
         foreach (var room in suitableRooms)
         {
-            currentTotal += room.metadata.Probability;
+            currentTotal += room.metadata.Probability + 1;
 
             if (randomNumber <= currentTotal)
             {
