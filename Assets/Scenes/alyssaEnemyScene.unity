@@ -415,7 +415,7 @@ PrefabInstance:
     - target: {fileID: 4996640029473100729, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
       propertyPath: jumpForce
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4996640029473100730, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
@@ -538,7 +538,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Rooms.Array.data[7].prefab
       value: 
-      objectReference: {fileID: 9190198094081639809, guid: 3a3fcd031bb5c2b469224f3eaea6d2c5,
+      objectReference: {fileID: 1912366876176020144, guid: 0c81369ff4e96ea48ae372d1322d8b54,
         type: 3}
     - target: {fileID: 4996640029473100735, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
