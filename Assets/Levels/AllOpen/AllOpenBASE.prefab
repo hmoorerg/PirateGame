@@ -1437,7 +1437,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1587,7 +1587,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1634,18 +1634,16 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: -3879221313606972675, guid: 9d67868e55e9a2d419c4427e933a9b31,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 6
     m_Data: {fileID: -8064741295012349679, guid: 9d67868e55e9a2d419c4427e933a9b31,
       type: 3}
   - m_RefCount: 94
     m_Data: {fileID: 2822169419149486151, guid: 9d67868e55e9a2d419c4427e933a9b31,
       type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 7190652406813565628, guid: 9d67868e55e9a2d419c4427e933a9b31,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 14
     m_Data: {fileID: -7028684991731170693, guid: 9d67868e55e9a2d419c4427e933a9b31,
       type: 3}
@@ -1655,10 +1653,12 @@ Tilemap:
   - m_RefCount: 16
     m_Data: {fileID: 2076148154717738915, guid: 9d67868e55e9a2d419c4427e933a9b31,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 7190652406813565628, guid: 9d67868e55e9a2d419c4427e933a9b31,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -3879221313606972675, guid: 9d67868e55e9a2d419c4427e933a9b31,
+      type: 3}
   m_TileMatrixArray:
   - m_RefCount: 138
     m_Data:
@@ -1777,7 +1777,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9190198094081639809}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9190198094299772272}
