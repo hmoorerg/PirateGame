@@ -472,6 +472,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4996640029473100731, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f46aec4b2bc951a4d83488253852d505, type: 2}
     - target: {fileID: 4996640029473100735, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
       propertyPath: ChunkLoadRange
@@ -515,7 +520,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Rooms.Array.data[4].prefab
       value: 
-      objectReference: {fileID: 9190198094081639809, guid: 7287d7538669dff4785f2ba76bb04e31,
+      objectReference: {fileID: 1912366876176020144, guid: 0c81369ff4e96ea48ae372d1322d8b54,
         type: 3}
     - target: {fileID: 4996640029473100735, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
