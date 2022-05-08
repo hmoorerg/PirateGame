@@ -1657,7 +1657,7 @@ GameObject:
   - component: {fileID: 9190198094081639823}
   - component: {fileID: 9190198094081639808}
   m_Layer: 0
-  m_Name: WallBasr
+  m_Name: WallBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
