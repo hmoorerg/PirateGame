@@ -120,7 +120,8 @@ MonoBehaviour:
   MaxSpeed: 5
   Acceleration: 1
   MinDistance: 1
-  MaxDistance: 1
+  MaxDistance: 7
+  MaxVerticalDistance: 5
 --- !u!60 &3578620488319713758
 PolygonCollider2D:
   m_ObjectHideFlags: 0

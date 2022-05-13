@@ -120,7 +120,8 @@ MonoBehaviour:
   MaxSpeed: 5
   Acceleration: 1
   MinDistance: 1
-  MaxDistance: 1
+  MaxDistance: 7
+  MaxVerticalDistance: 5
 --- !u!50 &-8201819237725660270
 Rigidbody2D:
   serializedVersion: 4
