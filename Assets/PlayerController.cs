@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
         isJumping = false;
         facingLeft = true;
         
-        attackDuration = 19;
         attackCooldown = false;
         isAttack = false;
         attackTime = 0;
