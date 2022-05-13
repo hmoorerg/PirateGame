@@ -104,11 +104,12 @@ public class GenerateTerrain : MonoBehaviour
 
     void Update()
     {
-        HandleRooms(transform.position);
+        HandleRooms(Player.transform.position);
     }
 
     private Dictionary<Vector2Int, RoomState> map = new Dictionary<Vector2Int, RoomState>();
     private HashSet<Vector2Int> loadedChunksPositions = new HashSet<Vector2Int>();
+    public GameObject Player;
     public GameObject MapParentObject;
     public int ChunkSizeX = 2;
     public int ChunkSizeY = 1;
@@ -117,7 +118,7 @@ public class GenerateTerrain : MonoBehaviour
 
     public Room GetCurrentRoom()
     {
-        var position = GetGridCoordinates(transform.position);
+        var position = GetGridCoordinates(Player.transform.position);
         return map[new Vector2Int(position.x, position.y)].Room;
     }
 
