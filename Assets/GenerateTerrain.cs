@@ -68,6 +68,7 @@ public class GenerateTerrain : MonoBehaviour
 
                 // This gets the most suitable rooms
                 var suitableRooms = Rooms
+                                    .Where(room => room.metadata.RoomType == currentRoomMetadata.RoomType) // Ensure that only matching room types are used
                                     .OrderBy(room => GetRoomSuitabilityScore(currentRoomMetadata, room.metadata)) // Sort the rooms by their suitability
                                     .GroupBy(room => GetRoomSuitabilityScore(currentRoomMetadata, room.metadata)) // Group up rooms with a similar suitability level
                                     .First() // Take the group of most suitable rooms

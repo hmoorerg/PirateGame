@@ -59,6 +59,7 @@ class DungeonGenerator
                 new RoomMetadata()
                 {
                     IsBottomOpen = true,
+                    RoomType = RoomType.Boss
                 }
             });
         Layers.Add(exit);
@@ -86,6 +87,13 @@ class DungeonFloor
     }
 }
 
+// Enum with room types:
+public enum RoomType {
+    Normal,
+    Boss
+};
+
+
 [Serializable]
 public class RoomMetadata
 {
@@ -94,5 +102,7 @@ public class RoomMetadata
     public bool IsLeftOpen = false;
     public bool IsRightOpen = false;
     public float Probability = 1;
+
+    public RoomType RoomType = RoomType.Normal;
 
 }
