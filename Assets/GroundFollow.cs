@@ -23,9 +23,10 @@ public class GroundFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Player = GameObject.FindWithTag("Player");
         if (Player is null) 
         {
-            Player = GameObject.FindGameObjectWithTag("Player");
+            Player = GameObject.FindWithTag("Player");
             return;
         }
 
