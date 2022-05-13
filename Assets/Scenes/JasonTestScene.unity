@@ -238,7 +238,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &34494266
 PrefabInstance:
@@ -9398,7 +9398,7 @@ Animator:
   m_GameObject: {fileID: 2000373454}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 410c9d2f0f98e454fa724b8f52df0d5f, type: 2}
+  m_Controller: {fileID: 9100000, guid: f46aec4b2bc951a4d83488253852d505, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
