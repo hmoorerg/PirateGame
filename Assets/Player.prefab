@@ -251,7 +251,7 @@ MonoBehaviour:
   animator: {fileID: 5465945445738321705}
   moveSpeed: 10
   maxSpeed: 15
-  jumpForce: 50
+  jumpForce: 20
   friction: 0.6
   attackCooldown: 0
   attackDuration: 5
