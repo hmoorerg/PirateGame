@@ -11,6 +11,8 @@ public class GroundFollow : MonoBehaviour
     public float MinDistance = 1f;
     public float MaxDistance = 1f;
 
+      public float MaxVerticalDistance = 1f;
+
     private Rigidbody2D _rigidbody;
 
 
@@ -23,10 +25,9 @@ public class GroundFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player is null) 
+        if (Player == null) 
         {
-            Player = GameObject.FindGameObjectWithTag("Player");
-            return;
+            Player = GameObject.FindWithTag("Player");
         }
 
         // Move towards the player
@@ -34,12 +35,15 @@ public class GroundFollow : MonoBehaviour
         var distance = Vector3.Distance(transform.position, target.position);
         Debug.Log(distance);
 
-        if (distance > MinDistance)
+        if (MinDistance < distance && distance < MaxDistance)
         {
             var dir = (target.position - transform.position).normalized;
             //Check if dir is facing left or right
             MoveHorizontally(dir);
-            MoveVertically(dir);
+            if (distance < MaxVerticalDistance)
+            {
+                MoveVertically(dir);
+            }
         }
     }
 
@@ -48,12 +52,15 @@ public class GroundFollow : MonoBehaviour
     
     void MoveVertically(Vector3 dir)
     {
+        
+
         _timeSinceJump += Time.deltaTime;
         if (dir.y > 0)
         {
-            if (_timeSinceJump > 0.5f)
+            if (_timeSinceJump > 2.0f)
             {
-                _rigidbody.AddForce(Vector2.up * Acceleration * Time.deltaTime * 1000);
+                _rigidbody.AddForce(Vector2.up * Acceleration * 500f);
+                _timeSinceJump = 0;
             }
         }
     

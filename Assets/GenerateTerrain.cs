@@ -43,6 +43,9 @@ public class GenerateTerrain : MonoBehaviour
 
     void Start()
     {
+        if (Player == null) {
+            Player = GameObject.FindWithTag("Player");
+        }
         GenerateDungeon();
     }
 
