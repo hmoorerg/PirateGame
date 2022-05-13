@@ -3,6 +3,14 @@ using UnityEngine;
 using System.Linq;
 using System;
 
+
+public class WorldSettings 
+{
+    public static int DungeonHeight = 15;
+    public static int DungeonWidth = 15;
+}
+
+
 public class GenerateTerrain : MonoBehaviour
 {
     // Check how closely the room matches the required room shape
@@ -51,7 +59,7 @@ public class GenerateTerrain : MonoBehaviour
 
     private void GenerateDungeon()
     {
-        DungeonGenerator generator = new DungeonGenerator(height: 15, maxWidth: 15);
+        DungeonGenerator generator = new DungeonGenerator(height: WorldSettings.DungeonHeight, maxWidth: WorldSettings.DungeonWidth);
 
         // This variable gets the new starting point for each floor
         int currentXOffset = 0;
@@ -73,6 +81,7 @@ public class GenerateTerrain : MonoBehaviour
                                     .GroupBy(room => GetRoomSuitabilityScore(currentRoomMetadata, room.metadata)) // Group up rooms with a similar suitability level
                                     .First() // Take the group of most suitable rooms
                                     .ToList(); //Convert back into a list
+                
                 Room randomRoom = GetRandomRoom(suitableRooms);
 
                 //Add the new room to the map
@@ -119,6 +128,8 @@ public class GenerateTerrain : MonoBehaviour
     public int ChunkSizeY = 1;
     public int ChunkLoadRange = 5;
     public Room[] Rooms;
+
+
 
     public Room GetCurrentRoom()
     {
