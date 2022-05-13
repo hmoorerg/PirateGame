@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3228649563781609132}
   - component: {fileID: 3578620488319713758}
   - component: {fileID: 3580105322225680036}
+  - component: {fileID: 8808438393874197348}
   m_Layer: 0
   m_Name: toothFace
   m_TagString: Untagged
@@ -177,3 +178,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8808438393874197348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6441737022201036650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6438cac9c16418591a66da2480a7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  MaxDistance: 100

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6337595467722438415}
   - component: {fileID: 2837767830037006836}
   - component: {fileID: 795396571886341759}
+  - component: {fileID: 85736180448871027}
   m_Layer: 0
   m_Name: starGuy
   m_TagString: Untagged
@@ -178,3 +179,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &85736180448871027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581588040828587277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6438cac9c16418591a66da2480a7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  MaxDistance: 100
