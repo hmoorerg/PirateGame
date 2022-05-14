@@ -2,17 +2,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
+using UnityEngine.SceneManagement;
 
 
 public class WorldSettings 
 {
-    public static int DungeonHeight = 15;
-    public static int DungeonWidth = 15;
+    public static int DungeonHeight = 3;
+    public static int DungeonWidth = 5;
 }
 
 
 public class GenerateTerrain : MonoBehaviour
 {
+    public void StartNextLevel(int heghtIncrease, int widthIncrease)
+    {
+        WorldSettings.DungeonHeight += heghtIncrease;
+        WorldSettings.DungeonWidth += widthIncrease;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
+
+
     // Check how closely the room matches the required room shape
     int GetRoomSuitabilityScore(RoomMetadata required, RoomMetadata actual)
     {
@@ -117,6 +128,12 @@ public class GenerateTerrain : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            StartNextLevel(1, 1);
+        }
+
         HandleRooms(Player.transform.position);
     }
 

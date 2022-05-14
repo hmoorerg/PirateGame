@@ -783,7 +783,7 @@ PrefabInstance:
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
       propertyPath: ChunkLoadRange
-      value: 3
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6238116168580273973, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
