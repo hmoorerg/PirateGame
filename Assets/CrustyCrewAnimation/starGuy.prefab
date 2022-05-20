@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2837767830037006836}
   - component: {fileID: 795396571886341759}
   - component: {fileID: 85736180448871027}
+  - component: {fileID: 4292032923953614523}
   m_Layer: 0
   m_Name: starGuy
   m_TagString: Untagged
@@ -193,3 +194,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   MaxDistance: 100
+--- !u!114 &4292032923953614523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581588040828587277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a285af11fb84a4a378c8c5d0cdb6b61a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxDamageDistance: 2
+  Health: 1
+  DamageSound: {fileID: 8300000, guid: cd13f08dd27814db98abe96a44331f16, type: 3}
+  IsBoss: 0

@@ -14,7 +14,7 @@ public class WorldSettings
 
 public class GenerateTerrain : MonoBehaviour
 {
-    public void StartNextLevel(int heghtIncrease, int widthIncrease)
+    public void StartNextLevel(int heghtIncrease = 1, int widthIncrease = 1)
     {
         WorldSettings.DungeonHeight += heghtIncrease;
         WorldSettings.DungeonWidth += widthIncrease;

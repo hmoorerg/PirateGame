@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 1950484169685481276}
   - component: {fileID: 4823602180116912137}
   - component: {fileID: 4951066620119744166}
-  - component: {fileID: -6239348937171040921}
-  - component: {fileID: -8201819237725660270}
+  - component: {fileID: 2984023099683734887}
+  - component: {fileID: 1021552799129115538}
   - component: {fileID: 3577116248348454418}
   - component: {fileID: 8531681099232103942}
+  - component: {fileID: 1813339235969261316}
   m_Layer: 0
   m_Name: crab
   m_TagString: Untagged
@@ -105,7 +106,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-6239348937171040921
+--- !u!114 &2984023099683734887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,7 +124,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 7
   MaxVerticalDistance: 5
---- !u!50 &-8201819237725660270
+--- !u!50 &1021552799129115538
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -194,3 +195,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   MaxDistance: 100
+--- !u!114 &1813339235969261316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282999597622411997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a285af11fb84a4a378c8c5d0cdb6b61a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxDamageDistance: 2
+  Health: 1
+  DamageSound: {fileID: 8300000, guid: cd13f08dd27814db98abe96a44331f16, type: 3}
+  IsBoss: 0

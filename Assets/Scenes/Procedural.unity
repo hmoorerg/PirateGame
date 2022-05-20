@@ -783,7 +783,38 @@ PrefabInstance:
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
       propertyPath: ChunkLoadRange
-      value: 50
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
+        type: 3}
+      propertyPath: Rooms.Array.size
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
+        type: 3}
+      propertyPath: Rooms.Array.data[48].prefab
+      value: 
+      objectReference: {fileID: 54720492131609070, guid: 73a10ac254c394e3fa22c7b74684c087,
+        type: 3}
+    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
+        type: 3}
+      propertyPath: Rooms.Array.data[48].metadata.RoomType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
+        type: 3}
+      propertyPath: Rooms.Array.data[48].metadata.IsTopOpen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
+        type: 3}
+      propertyPath: Rooms.Array.data[48].metadata.IsRightOpen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
+        type: 3}
+      propertyPath: Rooms.Array.data[48].metadata.Probability
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6238116168580273973, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
@@ -844,6 +875,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Game Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238116168580273978, guid: 3d5fa1466b7774037bf7d2cdd536585f,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameController
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d5fa1466b7774037bf7d2cdd536585f, type: 3}
