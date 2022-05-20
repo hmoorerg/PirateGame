@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3251053777493307411}
   - component: {fileID: 6312145212615171400}
   - component: {fileID: 1220017730388638961}
+  - component: {fileID: 6076226095352993449}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -156,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxSpeed: 3
   Acceleration: 1
-  MaxFollowDistance: 8
+  MaxFollowDistance: 3
   SecondsUntilFollowingStarts: 0.5
   PointValue: 1
   CoinPickupSounds:
@@ -177,3 +178,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!114 &6076226095352993449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4155889141793060510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc4dedc2d3ae473ea327c54f204a21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

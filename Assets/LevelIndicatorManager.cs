@@ -17,6 +17,5 @@ public class LevelIndicatorManager : MonoBehaviour
     void Update()
     {
         _textObject.text = $"Level {WorldSettings.CurrentLevelNumber}";
-        
     }
 }

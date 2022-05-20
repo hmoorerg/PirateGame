@@ -5,7 +5,21 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int MaxHealth = 100;
-    public int Health = 100;
+    
+    [HideInInspector]
+    private int _health;
+    
+    // Manages keeping the health variable in a safe range
+    public int Health {
+        get { return _health; }
+        set {
+            _health = Mathf.Clamp(value, 0, MaxHealth);
+            if (_health <= 0) {
+                _health = 0;
+                Die();
+            }
+        }
+    }
 
     //rigid body and animator object on player
     private Rigidbody2D rb;
@@ -27,9 +41,16 @@ public class PlayerController : MonoBehaviour
     public Inventory inventory;    
     public AudioClip SlashSound;
 
+    void Die()
+    {
+        Debug.Log("Died");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        _health = MaxHealth;
+
         rb = gameObject.GetComponent<Rigidbody2D>();
         inventory = new Inventory(); 
         isJumping = false;

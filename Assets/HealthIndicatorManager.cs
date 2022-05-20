@@ -19,7 +19,7 @@ public class HealthIndicatorManager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         var playerController = player.GetComponent<PlayerController>();
         
-        _textObject.text = $"Health: {(playerController.Health / playerController.MaxHealth)*100}%";
+        _textObject.text = $"Health: {((double)playerController.Health / (double)playerController.MaxHealth)*100}%";
 
         
     }
