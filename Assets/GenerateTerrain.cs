@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class WorldSettings 
 {
+    public static int CurrentLevelNumber = 1;
     public static int DungeonHeight = 3;
     public static int DungeonWidth = 5;
 }
@@ -18,6 +19,9 @@ public class GenerateTerrain : MonoBehaviour
     {
         WorldSettings.DungeonHeight += heghtIncrease;
         WorldSettings.DungeonWidth += widthIncrease;
+        WorldSettings.CurrentLevelNumber++;
+
+
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 

@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  MaxSpeed: 5
+  MaxSpeed: 2
   Acceleration: 1
   MinDistance: 1
   MaxDistance: 7
@@ -208,8 +208,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxDamageDistance: 2
-  Health: 1
+  Health: 3
   IsBoss: 0
-  KillValue: 1
-  DamageSound: {fileID: 8300000, guid: cd13f08dd27814db98abe96a44331f16, type: 3}
-  DeathSound: {fileID: 0}
+  CoinPrefab: {fileID: 4155889141793060510, guid: ea12ed8bf10c9470c97f164bc8790e8c,
+    type: 3}
+  MinCoinReward: 1
+  MaxCoinReward: 10
+  DamageSound: {fileID: 8300000, guid: 88393b065e49d4e69ab201e0330a33d2, type: 3}
+  DeathSound: {fileID: 8300000, guid: c825a4dfd7ed841418d592904c7ecb8a, type: 3}

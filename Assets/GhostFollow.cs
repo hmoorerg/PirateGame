@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class GhostFollow : MonoBehaviour
 {
-    public GameObject Player;
+    private GameObject _player;
     
     public float MaxSpeed = 5f;
     public float Acceleration = 100f;
 
+    public float MaxFollowDistance = 4f;
+
     private Rigidbody2D _rigidbody;
+
+
 
 
     // Start is called before the first frame update
@@ -21,21 +25,24 @@ public class GhostFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player is null) 
+        if (_player == null) 
         {
-            Player = GameObject.FindGameObjectWithTag("Player");
+            _player = GameObject.FindGameObjectWithTag("Player");
             return;
         }
 
-        transform.LookAt(Player.transform);
-        
-        // Move towards the player
-        var target = Player.transform;
-        var dir = target.position - transform.position;
-        // Add force to this rigidbody to move it towards the target if the max speed isn't exceeded
-        if (_rigidbody.velocity.magnitude< MaxSpeed)
+        if (Vector3.Distance(transform.position, _player.transform.position) <= MaxFollowDistance)
         {
-            _rigidbody.AddForce(dir.normalized * Acceleration * Time.deltaTime * 1000);
+            transform.LookAt(_player.transform);
+            
+            // Move towards the player
+            var target = _player.transform;
+            var dir = target.position - transform.position;
+            // Add force to this rigidbody to move it towards the target if the max speed isn't exceeded
+            if (_rigidbody.velocity.magnitude< MaxSpeed)
+            {
+                _rigidbody.AddForce(dir.normalized * Acceleration * Time.deltaTime * 1000);
+            }
         }
         
     }

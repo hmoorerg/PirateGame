@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   MaxSpeed: 5
-  Acceleration: 1
+  Acceleration: 4
   MinDistance: 1
   MaxDistance: 7
   MaxVerticalDistance: 5
@@ -136,7 +136,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -210,6 +210,9 @@ MonoBehaviour:
   MaxDamageDistance: 5
   Health: 10
   IsBoss: 1
-  KillValue: 10
-  DamageSound: {fileID: 8300000, guid: cd13f08dd27814db98abe96a44331f16, type: 3}
-  DeathSound: {fileID: 8300000, guid: 389425fd3f75b4ff4aab70ea6845d7ef, type: 3}
+  CoinPrefab: {fileID: 4155889141793060510, guid: ea12ed8bf10c9470c97f164bc8790e8c,
+    type: 3}
+  MinCoinReward: 20
+  MaxCoinReward: 30
+  DamageSound: {fileID: 8300000, guid: 88393b065e49d4e69ab201e0330a33d2, type: 3}
+  DeathSound: {fileID: 8300000, guid: c825a4dfd7ed841418d592904c7ecb8a, type: 3}
