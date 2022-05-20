@@ -33,7 +33,6 @@ public class GroundFollow : MonoBehaviour
         // Move towards the player
         var target = Player.transform;
         var distance = Vector3.Distance(transform.position, target.position);
-        Debug.Log(distance);
 
         if (MinDistance < distance && distance < MaxDistance)
         {

@@ -208,5 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxDamageDistance: 2
   Health: 1
-  DamageSound: {fileID: 8300000, guid: cd13f08dd27814db98abe96a44331f16, type: 3}
   IsBoss: 0
+  KillValue: 1
+  DamageSound: {fileID: 8300000, guid: cd13f08dd27814db98abe96a44331f16, type: 3}
+  DeathSound: {fileID: 0}
