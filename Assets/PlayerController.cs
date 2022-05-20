@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public int MaxHealth = 100;
+    public int Health = 100;
 
     //rigid body and animator object on player
     private Rigidbody2D rb;
@@ -22,8 +24,8 @@ public class PlayerController : MonoBehaviour
     public float attackDuration;
     private float attackTime;
     private Vector3 scale;
-    public Inventory inventory;
-    
+    public Inventory inventory;    
+    public AudioClip SlashSound;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
         //attack handling
         if(!isAttack){
             if(Input.GetKey("z")){ 
+                AudioSource.PlayClipAtPoint(SlashSound, transform.position);
                 isAttack = true; attackTime = 0; attackCooldown = false;
             }
         }else{

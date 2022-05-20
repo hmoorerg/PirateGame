@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class EnemyHandler : MonoBehaviour
 {
@@ -39,7 +40,6 @@ public class EnemyHandler : MonoBehaviour
             // Handle switching to the next level if the enemy is a boss
             if (IsBoss)
             {
-
                 //Find object with tag "GameController"
                 gameController.GetComponent<GenerateTerrain>().StartNextLevel();
             }
