@@ -426,7 +426,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -523,9 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Songs:
-  - {fileID: 8300000, guid: 18bde9b74a4664b2f91c4adff066fb81, type: 3}
-  - {fileID: 8300000, guid: 6f39e04876c7e49aba07977fa5c76491, type: 3}
-  - {fileID: 8300000, guid: 39d655085e0e34a9892e5c54cf076012, type: 3}
+  - {fileID: 8300000, guid: f3840a35b6d79f842bede4282a169a0c, type: 3}
 --- !u!4 &443494361
 Transform:
   m_ObjectHideFlags: 0
@@ -540,6 +538,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &802220880 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 661743151601026937, guid: 3ece51f1b2f4849ecbcc294993f47982,
+    type: 3}
+  m_PrefabInstance: {fileID: 1048584234222550522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &802220883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802220880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab9828bc01081544699b6c80c7ef19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &999946593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -690,6 +706,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3899445615118632072, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.30466723
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899445615118632072, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.011027217
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899445615118632072, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.019499123
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899445615118632072, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.38094777
+      objectReference: {fileID: 0}
     - target: {fileID: 4996640029473100709, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
       propertyPath: m_Name
@@ -750,10 +786,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321706, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.86618304
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321706, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.6825985
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: HitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c3185a2482e88e04eb3ac87502eac05d, type: 3}
+    - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: friction
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
       propertyPath: jumpForce
-      value: 25
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: knockback
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: attackDuration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321708, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5465945445738321711, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}

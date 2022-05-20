@@ -5,26 +5,41 @@ using UnityEngine;
 public class GroundFollow : MonoBehaviour
 {
     public GameObject Player;
-    
-    public float MaxSpeed = 5f;
-    public float Acceleration = 100f;
-    public float MinDistance = 1f;
-    public float MaxDistance = 1f;
+    public Animator animator;
+
+    public float maxSpeed = 4f;
+    public float moveSpeed = 1f;
+    public float minDistance = 1f;
+    public float maxDistance = 7f;
+    private bool facingLeft;
+    public float friction = 0.6f;
+    public float jumpForce = 8f;
+    public bool isAlive = true;
+    public float knockback = 10;
+    //The time since last jump
+    private float alphaLevel = 1;
+    private float _timeSinceJump = 0f;
 
       public float MaxVerticalDistance = 1f;
+      private Vector3 scale;
 
-    private Rigidbody2D _rigidbody;
+    private Rigidbody2D _rb;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        animator.SetBool("isDead", false);
+        facingLeft = true;
+        _rb = GetComponent<Rigidbody2D>();
+        //this is for flipping later
+        scale = this.gameObject.transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (Player == null) 
         {
             Player = GameObject.FindWithTag("Player");
@@ -33,24 +48,29 @@ public class GroundFollow : MonoBehaviour
         // Move towards the player
         var target = Player.transform;
         var distance = Vector3.Distance(transform.position, target.position);
-        Debug.Log(distance);
+        //Debug.Log(distance);
 
-        if (MinDistance < distance && distance < MaxDistance)
-        {
-            var dir = (target.position - transform.position).normalized;
-            //Check if dir is facing left or right
-            MoveHorizontally(dir);
-            if (distance < MaxVerticalDistance)
+        if(isAlive){
+            if (minDistance < distance && distance < maxDistance)
             {
-                MoveVertically(dir);
+                var dir = (target.position - transform.position).normalized;
+                //Check if dir is facing left or right
+                MoveHorizontally(dir);
+                if (distance < MaxVerticalDistance)
+                {
+                    MoveVertically(dir);
+                }
             }
+        }else{
+            //set to dead
+            animator.SetBool("isDead", true);
+            gameObject.GetComponent<SpriteRenderer>().color = new Color (1f, 1f, 1f, alphaLevel);
+            alphaLevel -= Time.deltaTime;
         }
     }
 
-    //The time since last jump
-    private float _timeSinceJump = 0f;
     
-    void MoveVertically(Vector3 dir)
+    void MoveVertically(Vector2 dir)
     {
         
 
@@ -59,26 +79,58 @@ public class GroundFollow : MonoBehaviour
         {
             if (_timeSinceJump > 2.0f)
             {
-                _rigidbody.AddForce(Vector2.up * Acceleration * 500f);
+                _rb.AddForce(new Vector2(0f,jumpForce), ForceMode2D.Impulse);
                 _timeSinceJump = 0;
             }
         }
     
     }
 
-    void MoveHorizontally(Vector3 dir)
+    void MoveHorizontally(Vector2 dir)
     {
+        int dirx;
         if (dir.x < 0)
         {
-            dir = new Vector3(-1, 0, 0);
+            if(!facingLeft){ this.gameObject.transform.localScale = new Vector3(1*scale.x, scale.y, scale.z); }
+            facingLeft = true;
+            dirx = -1;
         } else {
-            dir = new Vector3(1, 0, 0);
+            if(facingLeft){ this.gameObject.transform.localScale = new Vector3(-1*scale.x, scale.y, scale.z);}
+            facingLeft = false;
+            dirx = 1;
         }
 
-        // Add force to this rigidbody to move it towards the target if the max speed isn't exceeded
-        if (_rigidbody.velocity.magnitude < MaxSpeed || Vector3.Angle(dir, _rigidbody.velocity) > 90)
-        {
-            _rigidbody.AddForce(dir * Acceleration * Time.deltaTime * 1000);
+        _rb.AddForce(new Vector2(moveSpeed*dirx, 0f), ForceMode2D.Impulse);
+
+        Vector2 vel = _rb.velocity;
+        //clamps speed at max speed
+        if(vel.x > maxSpeed){ vel.x = maxSpeed; }
+        if(vel.x < -maxSpeed){ vel.x = -maxSpeed; }
+
+        //applies a simulated friction
+        vel.x = vel.x*friction;
+        _rb.velocity = vel;
+    }
+
+    private void OnTriggerStay2D(Collider2D other) {
+        if(other.gameObject.tag == "Player" && isAlive){
+        //get player script
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        //get player position
+        Vector2 playerPos = other.transform.position;
+            if(player.isHit){
+                return;
+            }
+            player.isHit = true;
+            //get enemy postion 
+            Vector2 enemyPos = gameObject.transform.position;
+            //get knockback vector
+            Vector2 dir = (playerPos - enemyPos).normalized;
+            //apply knockback
+            other.gameObject.GetComponent<Rigidbody2D>().AddForce(dir*knockback, ForceMode2D.Impulse);
+            //play hit sound
+            AudioSource.PlayClipAtPoint(player.HitSound, transform.position, 0.5f);
+            
         }
     }
 }

@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class EnemyHandler : MonoBehaviour
 {
-    public float MaxDamageDistance = 5f;
     public int Health = 10;
-
-    public AudioClip DamageSound;
+        public AudioClip DamageSound;
     GameObject _player;
 
     public bool IsBoss = false;
@@ -27,7 +25,9 @@ public class EnemyHandler : MonoBehaviour
             }
             
             // Do this last because it stops this script
-            Destroy(gameObject);
+            this.gameObject.GetComponent<GroundFollow>().isAlive = false;
+            
+            Destroy(gameObject,1);
         }
     }
 
@@ -43,15 +43,5 @@ public class EnemyHandler : MonoBehaviour
         // Get the player object
         _player = GameObject.FindGameObjectWithTag("Player");
 
-        // Take damage if the player presses the z key
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            // Check if the player is in range
-            if (Vector3.Distance(transform.position, _player.transform.position) < MaxDamageDistance)
-            {
-                // Take damage
-                TakeDamage(1);
-            }
-        }
     }
 }

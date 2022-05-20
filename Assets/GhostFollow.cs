@@ -6,7 +6,8 @@ public class GhostFollow : MonoBehaviour
 {
     public GameObject Player;
     
-    public float MaxSpeed = 5f;
+    public float maxSpeed = 2f;
+    public float friction = 0.6f;
     public float Acceleration = 100f;
 
     private Rigidbody2D _rigidbody;
@@ -32,11 +33,20 @@ public class GhostFollow : MonoBehaviour
         // Move towards the player
         var target = Player.transform;
         var dir = target.position - transform.position;
+        
         // Add force to this rigidbody to move it towards the target if the max speed isn't exceeded
-        if (_rigidbody.velocity.magnitude< MaxSpeed)
+        if (_rigidbody.velocity.magnitude< maxSpeed)
         {
-            _rigidbody.AddForce(dir.normalized * Acceleration * Time.deltaTime * 1000);
+            _rigidbody.AddForce(dir.normalized * Acceleration * Time.deltaTime * 100);
         }
         
+        Vector2 vel = _rigidbody.velocity;
+        //clamps speed at max speed
+        if(vel.x > maxSpeed){ vel.x = maxSpeed; }
+        if(vel.x < -maxSpeed){ vel.x = -maxSpeed; }
+
+        //applies a simulated friction
+        vel.x = vel.x*friction;
+        _rigidbody.velocity = vel;
     }
 }

@@ -9,18 +9,25 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public Animator animator;
     //player variables
+    public AudioClip AttackSound;
+    public AudioClip HitSound;
     public float moveSpeed;
     public float maxSpeed;
     public float jumpForce;
     public float friction;
-    private bool isJumping;
+    public bool isJumping;
+    public float knockback = 2f;
+    public int damage = 1;
     private float moveHorizontal;
     private float moveVertical;
     private bool facingLeft;
-    private bool isAttack;
+    public bool isAttack;
     public bool attackCooldown;
     public float attackDuration;
     private float attackTime;
+    public bool isHit;
+    public float hitCooldown = 1;
+    private float hitTime;
     private Vector3 scale;
     public Inventory inventory;
     
@@ -32,7 +39,8 @@ public class PlayerController : MonoBehaviour
         inventory = new Inventory(); 
         isJumping = false;
         facingLeft = true;
-        
+        isHit = false;
+        hitTime = 0;
         attackCooldown = false;
         isAttack = false;
         attackTime = 0;
@@ -53,6 +61,7 @@ public class PlayerController : MonoBehaviour
         if(!isAttack){
             if(Input.GetKey("z")){ 
                 isAttack = true; attackTime = 0; attackCooldown = false;
+                AudioSource.PlayClipAtPoint(AttackSound, transform.position, 1f);
             }
         }else{
             if(!Input.GetKey("z")){
@@ -67,6 +76,18 @@ public class PlayerController : MonoBehaviour
                 if(attackCooldown){ isAttack = false; }
             }
             
+        }
+
+        //hit handling
+        if(isHit){
+            animator.SetBool("isHit", true);
+            hitTime += Time.deltaTime;
+            if(hitTime >= hitCooldown){
+                hitTime = 0;
+                isHit = false;
+            }
+        }else{
+            animator.SetBool("isHit", false);
         }
 
         
@@ -99,7 +120,7 @@ public class PlayerController : MonoBehaviour
         if(vel.x > maxSpeed){ vel.x = maxSpeed; }
         if(vel.x < -maxSpeed){ vel.x = -maxSpeed; }
 
-        //applies a simulated
+        //applies a simulated friction
         vel.x = vel.x*friction;
         rb.velocity = vel;
 
@@ -109,11 +130,4 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    void OnTriggerStay2D(Collider2D other) {
-        isJumping = false;
-    }
-
-    void OnTriggerExit2D(Collider2D other) {
-        isJumping = true;
-    }
 }

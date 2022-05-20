@@ -13,12 +13,13 @@ GameObject:
   - component: {fileID: 4951066620119744166}
   - component: {fileID: 2984023099683734887}
   - component: {fileID: 1021552799129115538}
-  - component: {fileID: 3577116248348454418}
   - component: {fileID: 8531681099232103942}
   - component: {fileID: 1813339235969261316}
+  - component: {fileID: 6910454470535876036}
+  - component: {fileID: 3934656165567457912}
   m_Layer: 0
   m_Name: crab
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282999597622411997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.8970876, y: -2.2923236, z: 0}
+  m_LocalPosition: {x: -0.01, y: -0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,10 +120,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  MaxSpeed: 5
-  Acceleration: 1
-  MinDistance: 1
-  MaxDistance: 7
+  animator: {fileID: 4951066620119744166}
+  maxSpeed: 3
+  moveSpeed: 1
+  minDistance: 1
+  maxDistance: 5
+  friction: 0.6
+  jumpForce: 7
+  isAlive: 1
+  knockback: 10
   MaxVerticalDistance: 5
 --- !u!50 &1021552799129115538
 Rigidbody2D:
@@ -144,43 +150,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!60 &3577116248348454418
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282999597622411997}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.72, y: 0.32}
-    newSize: {x: 0.72, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.25, y: 0.06}
-      - {x: 0.22, y: 0.08}
-      - {x: 0.089999996, y: 0.12}
-      - {x: -0.19, y: 0.12}
-      - {x: -0.21, y: 0.07}
-      - {x: -0.21, y: -0.02}
-      - {x: -0.14, y: -0.13}
-      - {x: -0.08, y: -0.14999999}
-      - {x: 0.13, y: -0.14999999}
-      - {x: 0.22999999, y: -0.06}
-      - {x: 0.25, y: -0.01}
+  m_Constraints: 4
 --- !u!114 &8531681099232103942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +177,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a285af11fb84a4a378c8c5d0cdb6b61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxDamageDistance: 2
-  Health: 1
-  DamageSound: {fileID: 8300000, guid: cd13f08dd27814db98abe96a44331f16, type: 3}
+  Health: 2
+  DamageSound: {fileID: 8300000, guid: addb2eee744fbab49b31b2a83ec5d83f, type: 3}
   IsBoss: 0
+--- !u!61 &6910454470535876036
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282999597622411997}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00849184, y: -0.01938638}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.72, y: 0.32}
+    newSize: {x: 0.72, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.21905631, y: 0.22860384}
+  m_EdgeRadius: 0
+--- !u!61 &3934656165567457912
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282999597622411997}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.009995878, y: -0.01938638}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.72, y: 0.32}
+    newSize: {x: 0.72, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.24011281, y: 0.22860384}
+  m_EdgeRadius: 0
