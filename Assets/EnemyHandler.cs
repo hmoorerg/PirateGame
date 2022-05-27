@@ -59,7 +59,9 @@ public class EnemyHandler : MonoBehaviour
             }
 
             // Do this last because it stops this script
-            Destroy(gameObject);
+            this.gameObject.GetComponent<GroundFollow>().isAlive = false;
+            
+            Destroy(gameObject,1);
         }
         else
         {
@@ -97,15 +99,5 @@ public class EnemyHandler : MonoBehaviour
         // Get the player object
         _player = GameObject.FindGameObjectWithTag("Player");
 
-        // Take damage if the player presses the z key
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            // Check if the player is in range
-            if (Vector3.Distance(transform.position, _player.transform.position) < MaxDamageDistance)
-            {
-                // Take damage
-                TakeDamage(1);
-            }
-        }
     }
 }

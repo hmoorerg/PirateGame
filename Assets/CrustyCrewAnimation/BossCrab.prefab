@@ -119,10 +119,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  MaxSpeed: 5
   Acceleration: 4
+  animator: {fileID: 8384044649800126851}
+  MaxSpeed: 4
+  moveSpeed: 1
   MinDistance: 1
   MaxDistance: 7
+  friction: 0.6
+  jumpForce: 8
+  isAlive: 1
   MaxVerticalDistance: 5
 --- !u!50 &4522436668560225463
 Rigidbody2D:
@@ -207,7 +212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a285af11fb84a4a378c8c5d0cdb6b61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxDamageDistance: 5
   Health: 10
   IsBoss: 1
   CoinPrefab: {fileID: 4155889141793060510, guid: ea12ed8bf10c9470c97f164bc8790e8c,

@@ -6,7 +6,8 @@ public class GhostFollow : MonoBehaviour
 {
     private GameObject _player;
     
-    public float MaxSpeed = 5f;
+    public float MaxSpeed = 2f;
+    public float friction = 0.6f;
     public float Acceleration = 100f;
 
     public float MaxFollowDistance = 4f;
@@ -45,5 +46,13 @@ public class GhostFollow : MonoBehaviour
             }
         }
         
+        Vector2 vel = _rigidbody.velocity;
+        //clamps speed at max speed
+        if(vel.x > MaxSpeed){ vel.x = MaxSpeed; }
+        if(vel.x < -MaxSpeed){ vel.x = -MaxSpeed; }
+
+        //applies a simulated friction
+        vel.x = vel.x*friction;
+        _rigidbody.velocity = vel;
     }
 }
