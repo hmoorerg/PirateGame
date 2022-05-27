@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class Item
 {
-
     public string name;
     public string description;
     public int count;
-    
-    
 }
 
 
@@ -66,6 +63,7 @@ public class Inventory
                 return itemList[i].count;
             }
         }
+        return 0;
     }
 
     public string getDescription(string item) {
@@ -74,7 +72,6 @@ public class Inventory
                 return itemList[i].description;
             }
         }
-    }
-        Debug.Log("Couldn't find item to drop.");
+        return "No description found";
     }
 }
