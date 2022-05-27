@@ -39,13 +39,18 @@ public class PlayerController : MonoBehaviour
         attackTime = 0;
         //this is for flipping later
         scale = this.gameObject.transform.localScale;
+        inventory.printInventory();
+        inventory.addItem("Basic_Sword");
+        inventory.printInventory();
+        inventory.dropItem("Basic_Sword");
+        inventory.printInventory();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        inventory.printInventory();
-        inventory.getItem("Basic_Sword");
+
         //gets wasd and arrow key inputs
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         moveVertical = Input.GetAxisRaw("Vertical");
