@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         inventory = new Inventory(); 
+        inventory.start();
         isJumping = false;
         facingLeft = true;
         isHit = false;
@@ -46,11 +47,13 @@ public class PlayerController : MonoBehaviour
         attackTime = 0;
         //this is for flipping later
         scale = this.gameObject.transform.localScale;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         //gets wasd and arrow key inputs
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         moveVertical = Input.GetAxisRaw("Vertical");

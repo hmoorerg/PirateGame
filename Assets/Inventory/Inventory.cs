@@ -2,19 +2,76 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class Item
+{
+    public string name;
+    public string description;
+    public int count;
+}
+
+
 public class Inventory
 {
-    // Start is called before the first frame update
-    private List<Item> itemList;
+    public List<Item> itemList = new List<Item>();
 
-    public Inventory() {
-        itemList = new List<Item>();
-        addItem(new Item {itemType = Item.ItemType.Pirate_Sword, amount = 1} );
-        Debug.Log("hit");
+    public void start() { //starts new inventory
+        itemList.Add( new Item {name= "Basic_Sword", description= "Sword!", count= 0} );
+        itemList.Add( new Item {name= "Heavy_Sword", description= "Sword!", count= 0} );
+        itemList.Add( new Item {name= "Pistol", description= "Sword!", count= 0} );
+        itemList.Add( new Item {name= "Axe", description= "Sword!", count= 0} );
+        itemList.Add( new Item {name= "Magic_Boots", description= "Sword!", count= 0} );
+        itemList.Add( new Item {name= "Food", description= "Sword!", count= 0} );
+        itemList.Add( new Item {name= "Coin", description= "Sword!", count= 0} );
+        itemList.Add( new Item {name= "Light Armor", description= "Sword!", count= 0} );
+        itemList.Add( new Item {name= "Heavy Armor", description= "Sword!", count= 0} );
+        itemList.Add( new Item {name= "Tennis Shoes", description= "Sword!", count= 0} );
+        Debug.Log("Started inventory");
     }
 
-    public void addItem(Item item) {
-        itemList.Add(item);
+    public void printInventory() {
+        //Debug.Log("Item / Quantity");
+        foreach (Item a in itemList) {
+            Debug.Log(a.name + " " + a.count);
+            //Debug.Log(a.description);
+        }
     }
-    
+
+    public void addItem(string item) {
+        for (int i = 0; i < itemList.Count; i++) {
+            if (itemList[i].name == item) {
+                itemList[i].count++;
+                Debug.Log("Added Item");
+                return;
+            }
+        }
+        Debug.Log("Couldn't find item to add.");
+    }
+
+    public void dropItem(string item){
+        for (int i = 0; i < itemList.Count; i++) {
+            if (itemList[i].name == item) {
+                itemList[i].count--;
+                Debug.Log("Dropped Item");
+                return;
+            }
+        }
+    }
+
+    public int getCount(string item) {
+        for (int i = 0; i < itemList.Count; i++) {
+            if (itemList[i].name == item) {
+                return itemList[i].count;
+            }
+        }
+        return 0;
+    }
+
+    public string getDescription(string item) {
+        for (int i = 0; i < itemList.Count; i++) {
+            if (itemList[i].name == item) {
+                return itemList[i].description;
+            }
+        }
+        return "No description found";
+    }
 }
