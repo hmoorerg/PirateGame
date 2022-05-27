@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         inventory = new Inventory(); 
+        inventory.start();
         isJumping = false;
         facingLeft = true;
         
@@ -43,6 +44,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        inventory.printInventory();
+        inventory.getItem("Basic_Sword");
         //gets wasd and arrow key inputs
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         moveVertical = Input.GetAxisRaw("Vertical");
