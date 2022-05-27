@@ -39,11 +39,6 @@ public class PlayerController : MonoBehaviour
         attackTime = 0;
         //this is for flipping later
         scale = this.gameObject.transform.localScale;
-        inventory.printInventory();
-        inventory.addItem("Basic_Sword");
-        inventory.printInventory();
-        inventory.dropItem("Basic_Sword");
-        inventory.printInventory();
 
     }
 
