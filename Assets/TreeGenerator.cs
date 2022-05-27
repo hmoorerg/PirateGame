@@ -15,7 +15,8 @@ class DungeonGenerator
             new RoomMetadata[]{
                 new RoomMetadata()
                 {
-                    IsTopOpen = true
+                    IsTopOpen = true,
+                    RoomType = RoomType.Entrance
                 }
             }
         );
@@ -37,6 +38,7 @@ class DungeonGenerator
                 {
                     IsLeftOpen = true,
                     IsRightOpen = true,
+                    RoomType = RoomType.Normal
                 };
                 rooms[j] = room;
             }
@@ -90,6 +92,7 @@ class DungeonFloor
 // Enum with room types:
 public enum RoomType {
     Normal,
+    Entrance,
     Boss
 };
 

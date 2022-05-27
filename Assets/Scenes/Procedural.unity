@@ -499,6 +499,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 18bde9b74a4664b2f91c4adff066fb81, type: 3}
   - {fileID: 8300000, guid: 6f39e04876c7e49aba07977fa5c76491, type: 3}
   - {fileID: 8300000, guid: 39d655085e0e34a9892e5c54cf076012, type: 3}
+  - {fileID: 8300000, guid: ec39a7e87480c42788af874c220a9fca, type: 3}
 --- !u!4 &443494361
 Transform:
   m_ObjectHideFlags: 0
@@ -1057,12 +1058,12 @@ PrefabInstance:
     - target: {fileID: 4996640029473100730, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7173296
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4996640029473100730, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.99700737
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4996640029473100730, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
@@ -1106,13 +1107,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5465945445738321706, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321706, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321706, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321706, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321706, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: m_Direction
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
       propertyPath: Health
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: jumpForce
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5465945445738321711, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
@@ -1131,41 +1157,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ece51f1b2f4849ecbcc294993f47982, type: 3}
---- !u!1 &1048584234222550523 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3078494597179333724, guid: 3ece51f1b2f4849ecbcc294993f47982,
-    type: 3}
-  m_PrefabInstance: {fileID: 1048584234222550522}
-  m_PrefabAsset: {fileID: 0}
---- !u!70 &1048584234222550524
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048584234222550523}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.77, y: 0.98}
-  m_Direction: 0
---- !u!114 &1048584234222550526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048584234222550523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 345d8705d81894a36a9d8f8b80dcdba5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _player: {fileID: 0}
 --- !u!1 &4996640030409452237 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5465945445738321719, guid: 3ece51f1b2f4849ecbcc294993f47982,
@@ -1184,12 +1175,6 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 4996640030409452237}
-    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
-        type: 3}
-      propertyPath: Rooms.Array.data[34].prefab
-      value: 
-      objectReference: {fileID: 54720492131609070, guid: 73a10ac254c394e3fa22c7b74684c087,
-        type: 3}
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
       propertyPath: Rooms.Array.data[35].prefab
@@ -1276,11 +1261,6 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
-      propertyPath: Rooms.Array.data[34].metadata.RoomType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
-        type: 3}
       propertyPath: Rooms.Array.data[35].metadata.RoomType
       value: 1
       objectReference: {fileID: 0}
@@ -1356,11 +1336,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
-      propertyPath: Rooms.Array.data[34].metadata.IsLeftOpen
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
-        type: 3}
       propertyPath: Rooms.Array.data[35].metadata.IsLeftOpen
       value: 0
       objectReference: {fileID: 0}
@@ -1393,11 +1368,6 @@ PrefabInstance:
         type: 3}
       propertyPath: Rooms.Array.data[41].metadata.IsLeftOpen
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
-        type: 3}
-      propertyPath: Rooms.Array.data[34].metadata.IsRightOpen
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
@@ -1463,11 +1433,6 @@ PrefabInstance:
         type: 3}
       propertyPath: Rooms.Array.data[48].metadata.Probability
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
-        type: 3}
-      propertyPath: Rooms.Array.data[34].metadata.IsBottomOpen
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}

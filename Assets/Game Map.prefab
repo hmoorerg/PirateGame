@@ -346,4 +346,13 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 1
       Probability: 1
+      RoomType: 2
+  - prefab: {fileID: 7834921474451023716, guid: 1db1173f976d2433abfb0310605cb4e1,
+      type: 3}
+    metadata:
+      IsTopOpen: 1
+      IsBottomOpen: 0
+      IsLeftOpen: 0
+      IsRightOpen: 0
+      Probability: 1
       RoomType: 1

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using System.Diagnostics;
 
@@ -20,6 +18,6 @@ public class TimerIndicatorManager : MonoBehaviour
     {
         var timespan = _stopWatch.Elapsed;
 
-        _textObject.text = $"{timespan.ToString(@"ss\:ff")}";
+        _textObject.text = timespan.ToString(@"ss\:ff");
     }
 }

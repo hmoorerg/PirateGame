@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,7 +30,6 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed;
     public float jumpForce;
     public float friction;
-    private bool isJumping;
     private float moveHorizontal;
     private float moveVertical;
     private bool facingLeft;
@@ -40,6 +40,14 @@ public class PlayerController : MonoBehaviour
     private Vector3 scale;
     public Inventory inventory;    
     public AudioClip SlashSound;
+
+
+    // Jumping variables
+    public float MaxJumpCount = 2;
+    private int jumpCount = 0;
+    private TimeSpan JumpCooldown = TimeSpan.FromSeconds(0.20);
+    private DateTime lastJumpTime = DateTime.Now;
+
 
     void Die()
     {
@@ -53,7 +61,6 @@ public class PlayerController : MonoBehaviour
 
         rb = gameObject.GetComponent<Rigidbody2D>();
         inventory = new Inventory(); 
-        isJumping = false;
         facingLeft = true;
         
         attackCooldown = false;
@@ -112,10 +119,13 @@ public class PlayerController : MonoBehaviour
             if(facingLeft){ this.gameObject.transform.localScale = new Vector3(-1*scale.x, scale.y, scale.z);}
             facingLeft = false;
         }
-        if(moveVertical > 0.1f && !isJumping){
+        if(moveVertical > 0.1f && (jumpCount < MaxJumpCount) && (DateTime.Now - lastJumpTime) > JumpCooldown){
             vel.y = 0;
             rb.velocity = vel;
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            lastJumpTime = DateTime.Now;
+            moveVertical = 0;
+            jumpCount++;
         }
 
         vel = rb.velocity;
@@ -129,15 +139,16 @@ public class PlayerController : MonoBehaviour
 
         //update animator
         animator.SetFloat("xSpeed", Mathf.Abs(moveHorizontal));
-        animator.SetBool("isJumping", isJumping);
+        animator.SetBool("isJumping", (jumpCount != 0));
         
     }
 
     void OnTriggerStay2D(Collider2D other) {
-        isJumping = false;
+        jumpCount = 0;
+        lastJumpTime = DateTime.MinValue; // Last jump time is irreleveant once we've landed
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        isJumping = true;
+        if (jumpCount == 0) jumpCount++;
     }
 }
