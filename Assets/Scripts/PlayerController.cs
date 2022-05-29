@@ -165,6 +165,18 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    public void TakeDamage(int damage, Vector3 hitLocation){
+        if(!isHit){
+            Health -= damage;
+            isHit = true;
+            var direction = hitLocation - transform.position;
+            rb.AddForce(direction * knockback, ForceMode2D.Impulse);
+            AudioSource.PlayClipAtPoint(HitSound, transform.position, 1f);
+        }
+
+        AudioSource.PlayClipAtPoint(HitSound, transform.position, 0.5f);
+
+    }
     
     public void Land() {
         jumpCount = 0;

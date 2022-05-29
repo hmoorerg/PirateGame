@@ -795,6 +795,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
+      propertyPath: MaxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
       propertyPath: jumpForce
       value: 15
       objectReference: {fileID: 0}

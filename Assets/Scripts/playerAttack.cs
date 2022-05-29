@@ -12,7 +12,7 @@ public class playerAttack : MonoBehaviour
         Vector2 playerPos = this.transform.position;
         if(other.gameObject.tag == "Enemy" && player.isAttack == true){
             Debug.Log("attacking");
-            if(!other.gameObject.GetComponent<GroundFollow>().isAlive){
+            if(!other.gameObject.GetComponent<EnemyHandler>().IsAlive){
                 return;
             }
             //get enemy postion 

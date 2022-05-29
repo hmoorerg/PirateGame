@@ -14,7 +14,6 @@ public class GroundFollow : MonoBehaviour
     private bool facingLeft;
     public float friction = 0.6f;
     public float jumpForce = 8f;
-    public bool isAlive = true;
     public float knockback = 10;
     //The time since last jump
     private float alphaLevel = 1;
@@ -48,7 +47,7 @@ public class GroundFollow : MonoBehaviour
         // Move towards the player
         var target = Player.transform;
         var distance = Vector3.Distance(transform.position, target.position);
-        if(isAlive){
+        if(this.gameObject.GetComponent<EnemyHandler>().IsAlive){
             if (minDistance < distance && distance < maxDistance)
             {
                 var dir = (target.position - transform.position).normalized;
@@ -110,25 +109,6 @@ public class GroundFollow : MonoBehaviour
         _rb.velocity = vel;
     }
 
-    private void OnTriggerStay2D(Collider2D other) {
-        if(other.gameObject.tag == "Player" && isAlive){
-        //get player script
-        PlayerController player = other.gameObject.GetComponent<PlayerController>();
-        //get player position
-        Vector2 playerPos = other.transform.position;
-            if(player.isHit){
-                return;
-            }
-            player.isHit = true;
-            //get enemy postion 
-            Vector2 enemyPos = gameObject.transform.position;
-            //get knockback vector
-            Vector2 dir = (playerPos - enemyPos).normalized;
-            //apply knockback
-            other.gameObject.GetComponent<Rigidbody2D>().AddForce(dir*knockback, ForceMode2D.Impulse);
-            //play hit sound
-            AudioSource.PlayClipAtPoint(player.HitSound, transform.position, 0.5f);
-            
-        }
-    }
+
 }
+

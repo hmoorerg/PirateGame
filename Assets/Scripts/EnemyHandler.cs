@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 public class EnemyHandler : MonoBehaviour
 {
     [Header("Health and Damage")]
-    public float MaxDamageDistance = 5f;
+    public int Damage = 1;
     public int Health = 10;
 
     public bool IsBoss = false;
@@ -21,6 +21,7 @@ public class EnemyHandler : MonoBehaviour
     public AudioClip DeathSound;
 
     GameObject _player;
+    public bool IsAlive { get; private set;} = true;
     public void TakeDamage(int damage)
     {
         Health -= damage;
@@ -45,8 +46,8 @@ public class EnemyHandler : MonoBehaviour
                 ScoreManager.Score += randomCoinAmount;
                 //Find object with tag "GameController"
                 gameController.GetComponent<GenerateTerrain>().StartNextLevel();
-            } 
-            else 
+            }
+            else
             {
                 // The enemy is a regular enemy, release coins
                 for (int i = 0; i < randomCoinAmount; i++)
@@ -59,9 +60,9 @@ public class EnemyHandler : MonoBehaviour
             }
 
             // Do this last because it stops this script
-            this.gameObject.GetComponent<GroundFollow>().isAlive = false;
-            
-            Destroy(gameObject,1);
+            IsAlive = false;
+
+            Destroy(gameObject, 1);
         }
         else
         {
@@ -77,7 +78,7 @@ public class EnemyHandler : MonoBehaviour
         }
     }
 
-    void PushAwayFromPlayer(float force) 
+    void PushAwayFromPlayer(float force)
     {
         // Get a unit vector facing away from the player
         Vector3 direction = (transform.position - _player.transform.position).normalized;
@@ -99,5 +100,17 @@ public class EnemyHandler : MonoBehaviour
         // Get the player object
         _player = GameObject.FindGameObjectWithTag("Player");
 
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player" && IsAlive)
+        {
+            //get player script
+            PlayerController player = other.gameObject.GetComponent<PlayerController>();
+            //get player position
+            player.TakeDamage(Damage, gameObject.transform.position);
+
+        }
     }
 }
