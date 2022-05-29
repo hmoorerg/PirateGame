@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: emptyroom
+    uniqueID: 2769849131
+    locked: 0
   - name: environment
     uniqueID: 3155354637
     locked: 0
