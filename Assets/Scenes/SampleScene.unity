@@ -6215,6 +6215,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: friction
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: jumpForce
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
+      propertyPath: attackDuration
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ece51f1b2f4849ecbcc294993f47982, type: 3}
 --- !u!1 &921426488

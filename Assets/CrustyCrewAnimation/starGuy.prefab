@@ -11,9 +11,15 @@ GameObject:
   - component: {fileID: 451643623097790984}
   - component: {fileID: 6936119073106222828}
   - component: {fileID: 7085216411813396665}
+  - component: {fileID: 2837767830037006836}
+  - component: {fileID: 795396571886341759}
+  - component: {fileID: 85736180448871027}
+  - component: {fileID: 4292032923953614523}
+  - component: {fileID: 4943072013083635069}
+  - component: {fileID: 3719341304695525739}
   m_Layer: 0
   m_Name: starGuy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4581588040828587277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.55723405, y: -2.8128285, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,3 +107,114 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2837767830037006836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581588040828587277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78808f1bbb40b465eb411c6e2144b1a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  animator: {fileID: 7085216411813396665}
+  maxSpeed: 4
+  moveSpeed: 1
+  minDistance: 1
+  maxDistance: 5
+  friction: 0.6
+  jumpForce: 5
+  isAlive: 1
+  knockback: 10
+  MaxVerticalDistance: 5
+--- !u!50 &795396571886341759
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581588040828587277}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &85736180448871027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581588040828587277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6438cac9c16418591a66da2480a7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  MaxDistance: 100
+--- !u!114 &4292032923953614523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581588040828587277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a285af11fb84a4a378c8c5d0cdb6b61a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxDamageDistance: 2
+  CoinPrefab: {fileID: 4155889141793060510, guid: ea12ed8bf10c9470c97f164bc8790e8c,
+    type: 3}
+  MinCoinReward: 1
+  MaxCoinReward: 10
+  DeathSound: {fileID: 8300000, guid: c825a4dfd7ed841418d592904c7ecb8a, type: 3}
+  Health: 2
+  DamageSound: {fileID: 8300000, guid: addb2eee744fbab49b31b2a83ec5d83f, type: 3}
+  IsBoss: 0
+--- !u!58 &4943072013083635069
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581588040828587277}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0033770602, y: -0.015618801}
+  serializedVersion: 2
+  m_Radius: 0.12736487
+--- !u!58 &3719341304695525739
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581588040828587277}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0033770602, y: -0.015618801}
+  serializedVersion: 2
+  m_Radius: 0.12736487

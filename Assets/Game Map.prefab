@@ -47,7 +47,7 @@ MonoBehaviour:
   MapParentObject: {fileID: 6238116168580273978}
   ChunkSizeX: 18
   ChunkSizeY: 10
-  ChunkLoadRange: 15
+  ChunkLoadRange: 3
   Rooms:
   - prefab: {fileID: 9190198094081639809, guid: 163b415eb1b00b34da6f593a23895940,
       type: 3}
@@ -57,6 +57,7 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 0
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 502425358357582116, guid: 741fa322f91a42d4480b8a54dd16b65d, type: 3}
     metadata:
       IsTopOpen: 1
@@ -64,6 +65,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 1
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 666841994633612811, guid: f2d39a2d017564740861563d4887c0ef, type: 3}
     metadata:
       IsTopOpen: 1
@@ -71,6 +73,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 1
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 1912366876176020144, guid: 3f4c618937948c54da4a13d872ce5504,
       type: 3}
     metadata:
@@ -79,14 +82,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 1
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: 7287d7538669dff4785f2ba76bb04e31,
-      type: 3}
-    metadata:
-      IsTopOpen: 1
-      IsBottomOpen: 1
-      IsLeftOpen: 1
-      IsRightOpen: 1
-      Probability: 0
+      RoomType: 0
   - prefab: {fileID: 7205951427831526734, guid: 4721bf009e21e3c4aa42795db1ea746a,
       type: 3}
     metadata:
@@ -95,6 +91,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 0
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 1127425170946564540, guid: b147a9c2a1017f14a99f91a09daa07a4,
       type: 3}
     metadata:
@@ -103,14 +100,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 0
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: 3a3fcd031bb5c2b469224f3eaea6d2c5,
-      type: 3}
-    metadata:
-      IsTopOpen: 0
-      IsBottomOpen: 1
-      IsLeftOpen: 1
-      IsRightOpen: 0
-      Probability: 1
+      RoomType: 0
   - prefab: {fileID: 7515610763453561195, guid: 512d93aa92b1a26458f89b908483f3cc,
       type: 3}
     metadata:
@@ -119,6 +109,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 1
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 4382194832089473329, guid: 36ede70931f500546be8014a623b0e43,
       type: 3}
     metadata:
@@ -127,14 +118,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 1
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: 75dd7e5cb8bcd1444bddf8d50af6b1d4,
-      type: 3}
-    metadata:
-      IsTopOpen: 0
-      IsBottomOpen: 1
-      IsLeftOpen: 1
-      IsRightOpen: 1
-      Probability: 1
+      RoomType: 0
   - prefab: {fileID: 3686404504492905601, guid: 33fc6cbf0bc8dbb428341af0e925ee72,
       type: 3}
     metadata:
@@ -143,6 +127,7 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 0
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 54720492131609070, guid: 10a13d70c9571484e874bfe1fe5f7034, type: 3}
     metadata:
       IsTopOpen: 0
@@ -150,14 +135,7 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 0
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: 996ffe4935562624f851bb17f915202b,
-      type: 3}
-    metadata:
-      IsTopOpen: 0
-      IsBottomOpen: 1
-      IsLeftOpen: 0
-      IsRightOpen: 0
-      Probability: 1
+      RoomType: 0
   - prefab: {fileID: 8537538485799298003, guid: 537e7fda19b14e84fbd14e7cda72c5ce,
       type: 3}
     metadata:
@@ -166,6 +144,7 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 1
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 8417774158824159205, guid: f4f62e1ed808c314db14a37da8466aad,
       type: 3}
     metadata:
@@ -174,14 +153,7 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 1
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: a017eeddfe13a544e966ca1fd75f8838,
-      type: 3}
-    metadata:
-      IsTopOpen: 0
-      IsBottomOpen: 1
-      IsLeftOpen: 0
-      IsRightOpen: 1
-      Probability: 1
+      RoomType: 0
   - prefab: {fileID: 829649544816201249, guid: 5017c4578f4b98941a77fe95b3a38b07, type: 3}
     metadata:
       IsTopOpen: 0
@@ -189,6 +161,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 0
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 4127093668481816006, guid: 067baa623008d1542a353651d9e6313d,
       type: 3}
     metadata:
@@ -197,14 +170,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 0
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: 73fa3bc0e84738547a8ff1c13d9274b9,
-      type: 3}
-    metadata:
-      IsTopOpen: 0
-      IsBottomOpen: 0
-      IsLeftOpen: 1
-      IsRightOpen: 0
-      Probability: 1
+      RoomType: 0
   - prefab: {fileID: 5311485233017568733, guid: 6af6207e1ef67cc41bd0c4067f733ec9,
       type: 3}
     metadata:
@@ -213,6 +179,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 1
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 3613460493010891961, guid: 195f046f6b95fa24b91017798a53b537,
       type: 3}
     metadata:
@@ -221,6 +188,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 1
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 2804083764361125232, guid: 5089eefe75fdcdc40b4718c698533857,
       type: 3}
     metadata:
@@ -229,14 +197,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 1
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: 6b0e1cfb2508e1148a337a8de979d7f9,
-      type: 3}
-    metadata:
-      IsTopOpen: 0
-      IsBottomOpen: 0
-      IsLeftOpen: 1
-      IsRightOpen: 1
-      Probability: 1
+      RoomType: 0
   - prefab: {fileID: 4244276352145085051, guid: edea261e33e1c494f99bf7b6e449fa12,
       type: 3}
     metadata:
@@ -245,6 +206,7 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 1
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 8441363976803371542, guid: 4ab1f35304368bb4ab9e8588c4261084,
       type: 3}
     metadata:
@@ -253,14 +215,7 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 1
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: ebc084a24b8a92b49b999734e36d1d37,
-      type: 3}
-    metadata:
-      IsTopOpen: 0
-      IsBottomOpen: 0
-      IsLeftOpen: 0
-      IsRightOpen: 1
-      Probability: 1
+      RoomType: 0
   - prefab: {fileID: 7686441602697767421, guid: c1315984916b1954a91d78d476049594,
       type: 3}
     metadata:
@@ -269,6 +224,7 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 0
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 2301830334967240256, guid: 7fbdb7743ee55054e919ab6bcaf7b667,
       type: 3}
     metadata:
@@ -277,14 +233,7 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 0
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: 23cb8d0df8197c44daaa3c680b5af1c5,
-      type: 3}
-    metadata:
-      IsTopOpen: 1
-      IsBottomOpen: 1
-      IsLeftOpen: 0
-      IsRightOpen: 0
-      Probability: 1
+      RoomType: 0
   - prefab: {fileID: 207286622865081140, guid: 057f906de793b8946807327b93ff538a, type: 3}
     metadata:
       IsTopOpen: 1
@@ -292,6 +241,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 0
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 6903851102876349949, guid: e40e9a0af790c834099ba284d8b6b815,
       type: 3}
     metadata:
@@ -300,14 +250,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 0
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: 067f521276460bd49914a6e7480bb93a,
-      type: 3}
-    metadata:
-      IsTopOpen: 1
-      IsBottomOpen: 1
-      IsLeftOpen: 1
-      IsRightOpen: 0
-      Probability: 1
+      RoomType: 0
   - prefab: {fileID: 3403717726307294871, guid: d2b123c95853c6f4f8db64ecff97854a,
       type: 3}
     metadata:
@@ -316,6 +259,7 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 1
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 2848503494970747356, guid: 2cf45b74299ad1246bcf858a3fb21b8b,
       type: 3}
     metadata:
@@ -324,14 +268,7 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 1
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: 8c25279027d1ba74c84ec117a8d4bf31,
-      type: 3}
-    metadata:
-      IsTopOpen: 1
-      IsBottomOpen: 1
-      IsLeftOpen: 0
-      IsRightOpen: 1
-      Probability: 1
+      RoomType: 0
   - prefab: {fileID: 885371981913125896, guid: 1d9b618c8b565f14ab442339377092d9, type: 3}
     metadata:
       IsTopOpen: 1
@@ -339,6 +276,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 0
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 3289732147689469457, guid: 299380f597bc9944491d14760465a70c,
       type: 3}
     metadata:
@@ -347,14 +285,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 0
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: 9fb605d9a0220fc4694b0c3255b8a405,
-      type: 3}
-    metadata:
-      IsTopOpen: 1
-      IsBottomOpen: 0
-      IsLeftOpen: 1
-      IsRightOpen: 0
-      Probability: 1
+      RoomType: 0
   - prefab: {fileID: 4975177283145311391, guid: 46cadbd06ba3b264182cba48f1b0d4a3,
       type: 3}
     metadata:
@@ -363,6 +294,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 1
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 3174542152551599958, guid: 6c2b7096b8d643b44a5d1ff272a1bdab,
       type: 3}
     metadata:
@@ -371,14 +303,7 @@ MonoBehaviour:
       IsLeftOpen: 1
       IsRightOpen: 1
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: af2bd4c08832aba46b02f994f964a932,
-      type: 3}
-    metadata:
-      IsTopOpen: 1
-      IsBottomOpen: 0
-      IsLeftOpen: 1
-      IsRightOpen: 1
-      Probability: 1
+      RoomType: 0
   - prefab: {fileID: 7834921474451023716, guid: c3d27644fcaceb147a5045470835d617,
       type: 3}
     metadata:
@@ -387,6 +312,7 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 0
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 9075870886451370053, guid: 4840aebac12e365439118c33b71b8d7f,
       type: 3}
     metadata:
@@ -395,14 +321,7 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 0
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: a7decfacd3aef6b4bb7dac5de024cacc,
-      type: 3}
-    metadata:
-      IsTopOpen: 1
-      IsBottomOpen: 0
-      IsLeftOpen: 0
-      IsRightOpen: 1
-      Probability: 1
+      RoomType: 0
   - prefab: {fileID: 6392186616426667100, guid: 2b81a438aa67bfa46975e494bdc45709,
       type: 3}
     metadata:
@@ -411,6 +330,7 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 0
       Probability: 1
+      RoomType: 0
   - prefab: {fileID: 153029438261988278, guid: 98cc28106ede7fd42b1d39a854643038, type: 3}
     metadata:
       IsTopOpen: 1
@@ -418,11 +338,21 @@ MonoBehaviour:
       IsLeftOpen: 0
       IsRightOpen: 1
       Probability: 1
-  - prefab: {fileID: 9190198094081639809, guid: a1a7078eb095d70418cc18bca1e38915,
-      type: 3}
+      RoomType: 0
+  - prefab: {fileID: 54720492131609070, guid: 73a10ac254c394e3fa22c7b74684c087, type: 3}
     metadata:
       IsTopOpen: 1
       IsBottomOpen: 0
       IsLeftOpen: 0
       IsRightOpen: 1
       Probability: 1
+      RoomType: 2
+  - prefab: {fileID: 7834921474451023716, guid: 1db1173f976d2433abfb0310605cb4e1,
+      type: 3}
+    metadata:
+      IsTopOpen: 1
+      IsBottomOpen: 0
+      IsLeftOpen: 0
+      IsRightOpen: 0
+      Probability: 1
+      RoomType: 1
