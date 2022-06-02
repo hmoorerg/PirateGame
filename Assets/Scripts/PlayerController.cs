@@ -58,6 +58,8 @@ public class PlayerController : MonoBehaviour
     void Die()
     {
         Debug.Log("Died");
+        // Load the scene named DeathScreen
+        UnityEngine.SceneManagement.SceneManager.LoadScene("DeathScreen");
     }
 
     // Start is called before the first frame update
