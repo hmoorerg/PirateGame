@@ -49,14 +49,10 @@ public class EnemyHandler : MonoBehaviour
             }
             else
             {
-                // The enemy is a regular enemy, release coins
-                for (int i = 0; i < randomCoinAmount; i++)
-                {
-                    // Create a coin at this enemy's position
-                    var coin = Instantiate(CoinPrefab, transform.position, Quaternion.identity);
-                    // Add a random force to the coin
-                    coin.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(1f, 2f)) * 10);
-                }
+                // Search for the CoinManager script in the gameManager
+                var coinManager = gameController.GetComponent<CoinManager>();
+                coinManager.SpawnAt(transform.position, randomCoinAmount);
+
             }
 
             // Do this last because it stops this script
