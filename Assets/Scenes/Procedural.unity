@@ -1316,9 +1316,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
+      propertyPath: Rooms.Array.size
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
+        type: 3}
       propertyPath: Rooms.Array.data[34].prefab
       value: 
       objectReference: {fileID: 9190198094081639809, guid: 167c4a5719fd9e34d9cd49609d39c893,
+        type: 3}
+    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
+        type: 3}
+      propertyPath: Rooms.Array.data[35].prefab
+      value: 
+      objectReference: {fileID: 6182684767969607249, guid: 2196037693f3241278a4b70a4e20249e,
         type: 3}
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
@@ -1383,7 +1394,7 @@ PrefabInstance:
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
       propertyPath: Rooms.Array.data[35].metadata.RoomType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
@@ -1452,13 +1463,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
+      propertyPath: Rooms.Array.data[35].metadata.IsTopOpen
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
+        type: 3}
       propertyPath: Rooms.Array.data[48].metadata.IsTopOpen
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
       propertyPath: Rooms.Array.data[35].metadata.IsLeftOpen
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
@@ -1493,6 +1509,11 @@ PrefabInstance:
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
         type: 3}
       propertyPath: Rooms.Array.data[35].metadata.IsRightOpen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,
+        type: 3}
+      propertyPath: Rooms.Array.data[35].metadata.Probability
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6238116168580273972, guid: 3d5fa1466b7774037bf7d2cdd536585f,

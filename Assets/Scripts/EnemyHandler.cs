@@ -12,7 +12,6 @@ public class EnemyHandler : MonoBehaviour
     public bool IsBoss = false;
 
     [Header("Scoring")]
-    public GameObject CoinPrefab;
     public int MinCoinReward = 1;
     public int MaxCoinReward = 10;
 
