@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6238116168580273973}
   - component: {fileID: 6238116168580273972}
+  - component: {fileID: 7894478653387273685}
   m_Layer: 0
   m_Name: Game Map
   m_TagString: Untagged
@@ -356,3 +357,18 @@ MonoBehaviour:
       IsRightOpen: 0
       Probability: 1
       RoomType: 1
+--- !u!114 &7894478653387273685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6238116168580273978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210489254da35445dabad315ad32adc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefabs:
+  - {fileID: 4155889141793060510, guid: ea12ed8bf10c9470c97f164bc8790e8c, type: 3}
+  - {fileID: 7351270505730129607, guid: f02981454ffe8ef429d6124885a4d0df, type: 3}

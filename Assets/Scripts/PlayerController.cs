@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Died");
         // Load the scene named DeathScreen
+        ScoreManager.Score = 0;
         UnityEngine.SceneManagement.SceneManager.LoadScene("DeathScreen");
     }
 

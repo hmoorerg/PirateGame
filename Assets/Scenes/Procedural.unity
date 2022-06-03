@@ -1090,27 +1090,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368387880}
   m_CullTransparentMesh: 0
---- !u!1 &1559911841 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6238116168580273978, guid: 3d5fa1466b7774037bf7d2cdd536585f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1048584234222550522}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1559911844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1559911841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 210489254da35445dabad315ad32adc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinPrefabs:
-  - {fileID: 4155889141793060510, guid: ea12ed8bf10c9470c97f164bc8790e8c, type: 3}
-  - {fileID: 7351270505730129607, guid: f02981454ffe8ef429d6124885a4d0df, type: 3}
 --- !u!1 &1620267536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,6 +1625,17 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 7894478653387273685, guid: 3d5fa1466b7774037bf7d2cdd536585f,
+        type: 3}
+      propertyPath: coinPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7894478653387273685, guid: 3d5fa1466b7774037bf7d2cdd536585f,
+        type: 3}
+      propertyPath: coinPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 7159234277567808889, guid: 5bd92677f54f341a6a2060a84f813846,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d5fa1466b7774037bf7d2cdd536585f, type: 3}
 --- !u!1001 &6238116167774550077
