@@ -805,6 +805,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
         type: 3}
+      propertyPath: knockback
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465945445738321707, guid: 3ece51f1b2f4849ecbcc294993f47982,
+        type: 3}
       propertyPath: SlashSound
       value: 
       objectReference: {fileID: 8300000, guid: 021e23793da61472db3d3a3df2897817, type: 3}
